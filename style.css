@@ -1,0 +1,293 @@
+/* ======== import goole font - (Outfit) */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+/* ======== universel selector css ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* ========= body css =========== */
+body {
+  font-family: "Outfit", sans-serif;
+  background-color: var(--bg-color);
+}
+
+ul li {
+  list-style: none;
+}
+
+/* ======= all colors ========= */
+:root {
+  --bg-color: rgb(31 41 55);
+  --text-color: #fff;
+  --primary-bg: rgb(55 65 81);
+  --correct-bg: #00ff84;
+  --wrong-bg: #138c41;
+  --box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  --line-bg: rgb(247 247 255 / 25%);
+}
+
+/* ========= start quiz css ========== */
+.start_quiz,
+.quiz_rules,
+.quiz_app,
+.result_box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.start_quiz .start_btn {
+  background-color: var(--primary-bg);
+  color: var(--text-color);
+  border: 0;
+  outline: 0;
+  padding: 15px 55px;
+  border-radius: 6px;
+  font-family: "Outfit", sans-serif;
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.1s;
+}
+
+.start_quiz .start_btn:active,
+.rules_btn .exit_btn:active,
+.rules_btn .continue_btn:active {
+  transform: scale(0.96);
+}
+
+/* ====== quiz rules css ======= */
+.quiz_rules {
+  background-color: var(--primary-bg);
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.quiz_rules.active {
+  transform: translate(-50%, -50%) scale(0.98);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.quiz_rules h2 {
+  padding: 13px 25px;
+  color: var(--text-color);
+}
+
+.line {
+  width: 100%;
+  height: 0.9px;
+  background-color: var(--line-bg);
+  display: block;
+}
+
+.quiz_rules .rules_list {
+  padding: 20px;
+}
+
+.quiz_rules .rules_list li {
+  color: var(--text-color);
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.quiz_rules .rules_list li:last-of-type {
+  margin-bottom: 0px;
+}
+
+.quiz_rules .rules_btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 15px 20px;
+  gap: 10px;
+}
+
+.rules_btn .exit_btn,
+.rules_btn .continue_btn {
+  font-family: "Outfit", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: 0;
+  outline: 0;
+  padding: 10px 30px;
+  border-radius: 5px;
+  font-size: 17px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+/* ===== quiz app css ======= */
+.quiz_app {
+  background-color: var(--primary-bg);
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  width: 410px;
+}
+
+.quiz_app.active {
+  transform: translate(-50%, -50%) scale(1.1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.quiz_app .question {
+  color: var(--text-color);
+  padding: 10px 20px;
+  font-size: 22px;
+}
+
+.quiz_app .option_list {
+  color: var(--text-color);
+  padding: 10px 20px;
+}
+
+.quiz_app .option_list li {
+  background-color: var(--bg-color);
+  padding: 13px 20px;
+  border-radius: 5px;
+  font-size: 17px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+.quiz_app .option_list li:active {
+  transform: scale(0.97);
+}
+
+.quiz_app .option_list li.correct {
+  background-color: var(--correct-bg);
+  color: black;
+}
+
+.quiz_app .option_list li.wrong {
+  background-color: var(--wrong-bg);
+  color: white;
+}
+
+.quiz_app .option_list li.disbaled {
+  pointer-events: none;
+}
+
+.quiz_app .total_next {
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.total_next .question-left {
+  color: var(--text-color);
+  font-size: 19px;
+}
+
+.total_next .next_question {
+  font-family: "Outfit", sans-serif;
+  border: 0;
+  outline: 0;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-size: 17px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: transform 0.1s;
+  cursor: pointer;
+  display: none;
+}
+
+.total_next .next_question:active {
+  transform: scale(0.96);
+}
+
+.app-title {
+  font-size: 26px;
+  padding-top: 15px;
+  padding-left: 15px;
+  color: var(--text-color);
+}
+/* ======= result box css ======== */
+.result_box {
+  background: var(--primary-bg);
+  color: var(--text-color);
+  border-radius: 5px;
+  display: flex;
+  padding: 25px 30px;
+  width: 450px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  transform: translate(-50%, -50%) scale(0.9);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.result_box.active {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.result_box .icon {
+  font-size: 100px;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.result_box h1 {
+  text-align: center;
+}
+
+.result_box .buttons {
+  display: flex;
+  margin: 20px 0;
+}
+
+.result_box .buttons button {
+  margin: 0 10px;
+  height: 45px;
+  padding: 0 20px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.buttons button.restart {
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: "Outfit", sans-serif;
+  transition: all 0.1s ease;
+}
+
+.buttons button.restart:active,
+.buttons button.quit:active {
+  transform: scale(0.96);
+}
+
+.buttons button.quit {
+  color: var(--text-color);
+  background: var(--bg-color);
+  font-family: "Outfit", sans-serif;
+  transition: all 0.1s ease;
+}
+
+h3.score_text {
+  font-size: 25px;
+  margin: 10px 0px;
+}

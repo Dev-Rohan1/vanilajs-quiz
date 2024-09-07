@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js Quiz</title>
+    <!-- ======== google icon link ========== -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <!-- ========= css file link ========= -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ======= start quiz button ========== -->
+    <div class="start_quiz">
+      <button class="start_btn">Start Quiz</button>
+    </div>
+    <!-- ======= quiz rules =========== -->
+    <div class="quiz_rules">
+      <h2>Some Rules of this Quiz</h2>
+      <span class="line"></span>
+      <ul class="rules_list"></ul>
+      <span class="line"></span>
+      <div class="rules_btn">
+        <button class="exit_btn">Exit</button>
+        <button class="continue_btn">Continue</button>
+      </div>
+    </div>
+    <!-- ======== play quiz ========== -->
+    <div class="quiz_app">
+      <h1 class="app-title">Js Quiz Web App</h1>
+      <h2 class="question"></h2>
+      <ul class="option_list"></ul>
+      <span class="line"></span>
+      <div class="total_next">
+        <span class="question-left"></span>
+        <button class="next_question">Next Question</button>
+      </div>
+    </div>
+
+    <!-- Result Box -->
+    <div class="result_box">
+      <div class="icon">
+        <i class="fas fa-crown"></i>
+      </div>
+      <h1>
+        You've completed <br />
+        the Quiz!
+      </h1>
+      <h3 class="score_text"></h3>
+      <div class="buttons">
+        <button class="restart">Replay Quiz</button>
+      </div>
+    </div>
+
+    <script src="./question.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
